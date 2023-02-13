@@ -16,8 +16,10 @@ namespace SnakeAndLadderProblem
             Console.WriteLine("Player 1 is at position : " + position);
 
             Random random = new Random();
-            while (position != 100)
+            while (position < 100)
             {
+                int temp = position;
+
                 int dice = random.Next(1, 7);
                 Console.WriteLine($"The player rolls a dice and gets: {dice}");
 
@@ -44,6 +46,10 @@ namespace SnakeAndLadderProblem
                 if (position < 0)
                 {
                     position = 0;
+                }
+                else if (position >100)
+                {
+                    position = temp;
                 }
                 Console.WriteLine(" Player Current Position is at : {0}", position);
             }
